@@ -1,0 +1,21 @@
+---
+title: hack
+category:
+- css
+layout: blog-post
+---
+
+##常见hack的几种打法##
+
+###第一种:加前缀###
+
+{% highlight lua %}
+IE6 专用 _height: 100px;
+IE7 专用 *+height: 100px;
+IE6，IE7共用 *height: 100px;
+IE6/IE7/IE8 通用 .color {color: #0FC\9};
+IE8 专用.color {color: #0FC\0};
+IE7+、FF 共用 height: 100px !important;
+{% endhighlight %}
+
+###第二种:使用条件注释语句###

@@ -1,0 +1,7 @@
+/_site
+*.swp
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out

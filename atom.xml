@@ -1,0 +1,27 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>spemoon</title>
+ <link href="{% include blogurl.txt %}/atom.xml" rel="self"/>
+ <link href="{% include blogurl.txt %}/blogindex.html/"/>
+ <updated>{{ site.time | date_to_xmlschema }}</updated>
+ <id>{% include blogurl.txt %}/blogindex.html</id>
+ <author>
+   <name>Li Dian</name>
+   <email>lidian.sw@gmail.com</email>
+ </author>
+ 
+ {% for post in site.posts limit:15 %}
+ <entry>
+   <title>{{ post.title }}</title>
+   <link href="{% include blogurl.txt %}{{ post.url }}"/>
+   <updated>{{ post.date | date_to_xmlschema }}</updated>
+   <id>id:{{ post.id }}</id>
+   <content type="html">{{ post.content | xml_escape }}</content>
+ </entry>
+ {% endfor %}
+ 
+</feed>
